@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Home from  './components/Home'
+import TopRatedMovies from './components/TopRatedMovies'
+import UpComingMovies from './components/UpcomingMovies'
 
-export default App;
+import './App.css'
+
+const  App = () =>(
+    <Router>
+      <Routes>
+        <Route path='/' Component={Home}/>
+        <Route path='/toprated' Component={TopRatedMovies} />
+        <Route path='/upcoming' Component={UpComingMovies} />
+      </Routes>
+    </Router>
+  )
+
+
+export default App
